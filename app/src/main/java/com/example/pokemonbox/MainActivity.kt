@@ -2,10 +2,14 @@ package com.example.pokemonbox
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.common.base_component.BaseActivity
+import dagger.hilt.android.AndroidEntryPoint
 
-class MainActivity : AppCompatActivity() {
+
+@AndroidEntryPoint
+class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        layoutInflater.inflate(R.layout.activity_main, binding.contentFrame);
     }
 }
