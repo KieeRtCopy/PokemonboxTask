@@ -1,8 +1,12 @@
 package com.example.pokemonlist.presentation
 
+import android.graphics.Typeface
 import android.os.Bundle
 import android.text.Editable
+import android.text.Spannable
+import android.text.SpannableString
 import android.text.TextWatcher
+import android.text.style.StyleSpan
 import android.util.Log
 import android.view.View
 import android.widget.Toast
@@ -29,9 +33,25 @@ class PokemonListFragment : BaseFragment<FragmentPokemonListBinding>(FragmentPok
     private val viewModel: PokemonListViewModel by viewModels()
     private lateinit var adapter: PokemonAdapter
 
+    fun setupTitle() :  SpannableString{
+        val title = "PokemonBox";
+        val spannableTitle = SpannableString(title)
+        // Trova l'indice in cui compare la parola "Box"
+        val startIndex = title.indexOf("Box")
+        if (startIndex != -1) {
+            // Applica uno span in grassetto dalla posizione startIndex alla fine della parola "Box"
+            spannableTitle.setSpan(
+                StyleSpan(Typeface.BOLD),
+                startIndex,
+                startIndex + "Box".length,
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
+        }
+        return spannableTitle
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupToolbarTitle("PokemonBox")
+        setupToolbarTitle(setupTitle())
         showToolbar()
 
         binding?.rvPokemonList?.layoutManager = LinearLayoutManager(requireContext())

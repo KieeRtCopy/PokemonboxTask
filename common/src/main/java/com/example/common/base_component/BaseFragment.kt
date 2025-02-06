@@ -1,6 +1,10 @@
 package com.example.common.base_component
 
+import android.graphics.Typeface
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.StyleSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -53,6 +57,11 @@ abstract class BaseFragment<VB : ViewBinding>(
         setupPhysicalBackPressed()
     }
 
+
+    fun setupToolbarTitle(title:  SpannableString){
+        baseBinding?.materialToolbar?.title = title
+    }
+
     fun setupToolbarTitle(title: String) {
         toolbarTitle = title
         baseBinding?.materialToolbar?.title = title
@@ -64,7 +73,6 @@ abstract class BaseFragment<VB : ViewBinding>(
 
     fun showToolbar() {
         setupNavigationBackIcon(isNavigationBackActiveOnToolbar())
-        setupToolbarTitle(toolbarTitle())
         setupMenu()
         baseBinding?.materialToolbar?.visibility = View.VISIBLE
     }
