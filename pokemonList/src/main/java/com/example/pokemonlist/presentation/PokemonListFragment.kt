@@ -71,7 +71,8 @@ class PokemonListFragment : BaseFragment<FragmentPokemonListBinding>(FragmentPok
         binding?.rvPokemonList?.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(rv: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(rv, dx, dy)
-                if (!rv.canScrollVertically(1)) {
+                val query = binding?.etSearch?.text?.toString()?.trim() ?: ""
+                if (query.isEmpty() && !rv.canScrollVertically(1)) {
                     viewModel.processIntent(PokemonListIntent.LoadNextPage)
                 }
             }
@@ -103,9 +104,6 @@ class PokemonListFragment : BaseFragment<FragmentPokemonListBinding>(FragmentPok
 
         state.error?.let {
             Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
-        }.run {
-            Log.i("MYTAG", "Caricato ${state.pokemons.size} elementi");
-            Toast.makeText(requireContext(), "Caricato ${state.pokemons.size} elementi", Toast.LENGTH_SHORT).show()
         }
 
     }
