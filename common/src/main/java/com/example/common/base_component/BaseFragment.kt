@@ -22,17 +22,12 @@ abstract class BaseFragment<VB : ViewBinding>(
     private var baseBinding: FragmentBaseBinding? = null
     private var toolbarTitle: String = ""
 
-    /**
-     * Metodo invocato al click del tasto back sulla toolbar.
-     * I Fragment possono sovrascriverlo per comportamenti specifici.
-     */
+
     open fun onToolbarBackPressed() {
         navigateBack()
     }
 
-    /**
-     * Metodo invocato al click del tasto back fisico.
-     */
+
     open fun onPhysicalBackPressed() {
         navigateBack()
     }
@@ -42,9 +37,7 @@ abstract class BaseFragment<VB : ViewBinding>(
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Gonfia il layout base
         baseBinding = FragmentBaseBinding.inflate(inflater, container, false)
-        // Gonfia il layout specifico del Fragment figlio nel container del base layout
         binding = inflate(inflater, baseBinding?.fragmentContainer, false)
         baseBinding?.fragmentContainer?.addView(binding?.root)
         return baseBinding!!.root
@@ -114,7 +107,6 @@ abstract class BaseFragment<VB : ViewBinding>(
     open fun toolbarTitle(): String = toolbarTitle
 
     private fun setupPhysicalBackPressed() {
-        // Aggiunge il callback per il tasto back fisico
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
             onPhysicalBackPressed()
         }
@@ -126,7 +118,6 @@ abstract class BaseFragment<VB : ViewBinding>(
                 return
             }
         } catch (e: IllegalStateException) {
-            // Il Fragment non è in un NavGraph
         }
         requireActivity().finish()
     }

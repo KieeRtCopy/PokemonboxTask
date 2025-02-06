@@ -65,6 +65,17 @@ dependencies {
 
     // JSON serialization library, works with the Kotlin serialization plugin
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation("com.google.code.gson:gson:2.11.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.7.2")
+    implementation("com.squareup.okhttp3:okhttp:4.9.3")
+    implementation("com.squareup.retrofit2:converter-scalars:2.7.2")
+//    implementation("com.squareup.okhttp3:okhttp:4.9.3")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.9.3")
+
+    implementation("io.coil-kt:coil:2.6.0")
 }
 
 kapt {

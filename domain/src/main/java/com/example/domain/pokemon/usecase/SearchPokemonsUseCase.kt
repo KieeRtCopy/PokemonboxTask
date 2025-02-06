@@ -2,11 +2,12 @@ package com.example.domain.pokemon.usecase
 
 import com.example.domain.pokemon.PokemonRepository
 import com.example.domain.pokemon.model.Pokemon
+import javax.inject.Inject
 
-class SearchPokemonsUseCase(
+class SearchPokemonUseCase @Inject constructor(
     private val repository: PokemonRepository
 ) {
-    suspend operator fun invoke(query: String, page: Int, pageSize: Int): List<Pokemon> {
-        return repository.searchPokemons(query, page, pageSize)
+    suspend operator fun invoke(query: String): Pokemon? {
+        return repository.searchPokemon(query)
     }
 }

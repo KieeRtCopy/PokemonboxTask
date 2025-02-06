@@ -49,6 +49,7 @@ dependencies {
     implementation(project(":common"))
     implementation(project(":domain"))
     implementation(project(":data"))
+    implementation(project(":pokemonList"))
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.google.android.material:material:1.11.0")
@@ -81,6 +82,7 @@ dependencies {
 //    implementation("com.squareup.okhttp3:okhttp:4.9.3")
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.3")
 
+    implementation("io.coil-kt:coil:2.6.0")
 
 
 }

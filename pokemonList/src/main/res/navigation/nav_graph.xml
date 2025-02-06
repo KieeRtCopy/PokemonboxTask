@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/pokemonListFragment">
+
+    <fragment
+        android:id="@+id/pokemonListFragment"
+        android:name="com.example.pokemonlist.presentation.PokemonListFragment"
+        android:label="PokemonBox" >
+        <!-- Eventuali azioni per navigare ad altre schermate, ad es. un dettaglio -->
+    </fragment>
+
+</navigation>
