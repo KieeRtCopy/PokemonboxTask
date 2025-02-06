@@ -44,47 +44,38 @@ android {
 }
 
 dependencies {
-    val nav_version = "2.8.6"
-
     implementation(project(":common"))
     implementation(project(":domain"))
     implementation(project(":data"))
     implementation(project(":pokemonList"))
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.appcompat:appcompat:1.7.0")
-    implementation("com.google.android.material:material:1.11.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.2.1")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.2")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
+    implementation(Libs.androidxCore)
+    implementation(Libs.androidxAppCompat)
+    implementation(Libs.material)
+    implementation(Libs.constraintLayout)
 
-    implementation("com.google.dagger:hilt-android:2.51.1")
-    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
+    testImplementation(Libs.junit)
+    androidTestImplementation(Libs.testExtJunit)
+    androidTestImplementation(Libs.espressoCore)
+    testImplementation(Libs.coroutinesTest)
 
-    // Views/Fragments integration
-    implementation("androidx.navigation:navigation-fragment:$nav_version")
-    implementation("androidx.navigation:navigation-ui:$nav_version")
+    implementation(Libs.daggerHiltAndroid)
+    kapt(Libs.daggerHiltCompiler)
 
-    // Feature module support for Fragments
-    implementation("androidx.navigation:navigation-dynamic-features-fragment:$nav_version")
+    implementation(Libs.navigationFragment)
+    implementation(Libs.navigationUi)
+    implementation(Libs.navigationDynamicFeaturesFragment)
+    androidTestImplementation(Libs.navigationTesting)
 
-    // Testing Navigation
-    androidTestImplementation("androidx.navigation:navigation-testing:$nav_version")
+    implementation(Libs.kotlinxSerializationJson)
 
-    // JSON serialization library, works with the Kotlin serialization plugin
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
+    implementation(Libs.retrofit)
+    implementation(Libs.gson)
+    implementation(Libs.retrofitConverterGson)
+    implementation(Libs.okhttp)
+    implementation(Libs.retrofitConverterScalars)
+    implementation(Libs.loggingInterceptor)
 
-    implementation("com.squareup.retrofit2:retrofit:2.11.0")
-    implementation("com.google.code.gson:gson:2.11.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.7.2")
-    implementation("com.squareup.okhttp3:okhttp:4.9.3")
-    implementation("com.squareup.retrofit2:converter-scalars:2.7.2")
-//    implementation("com.squareup.okhttp3:okhttp:4.9.3")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.9.3")
-
-    implementation("io.coil-kt:coil:2.6.0")
-
+    implementation(Libs.coil)
 
 }
 
