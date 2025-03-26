@@ -45,9 +45,7 @@ android {
 
 dependencies {
     implementation(project(":common"))
-    implementation(project(":domain"))
-    implementation(project(":data"))
-    implementation(project(":pokemonList"))
+    implementation(project(":feature:home"))
     implementation(Libs.androidxCore)
     implementation(Libs.androidxAppCompat)
     implementation(Libs.material)

@@ -1,10 +1,9 @@
 package com.example.pokemonbox
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.common.base_component.BaseActivity
-import com.example.pokemonlist.presentation.PokemonListActivity
+import com.example.feature.home.presentation.search.PokemonListActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 

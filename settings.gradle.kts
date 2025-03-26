@@ -15,8 +15,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "Pokemonbox"
 include(":app")
-include(":domain")
 include(":common")
-include(":data")
-include(":pokemonList")
 include(":feature:home")

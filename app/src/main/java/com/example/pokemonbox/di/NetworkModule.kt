@@ -1,6 +1,5 @@
 package com.example.pokemonbox.di
 
-import com.example.data.pokemon.data_source_impl.remote.api.PokemonService
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.Strictness
@@ -60,11 +59,6 @@ class NetworkModule {
             .build()
     }
 
-    @Provides
-    @Singleton
-    fun providePokemonService(retrofit: Retrofit): PokemonService {
-        return retrofit.create(PokemonService::class.java)
-    }
 
 
 }

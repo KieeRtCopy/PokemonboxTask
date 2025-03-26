@@ -43,8 +43,6 @@ android {
 dependencies {
 
     implementation(project(":common"))
-    implementation(project(":domain"))
-    implementation(project(":data"))
     implementation(Libs.androidxCore)
     implementation(Libs.androidxAppCompat)
     implementation(Libs.material)
