@@ -66,9 +66,7 @@ android {
 
 dependencies {
     implementation project(path: ':common')
-    implementation project (':core:repository')
-    implementation project (':designSystem:ui')
-     implementation project(path: ':feature:$INTERFACE_MODULE_SET')
+
 }
 
 EOF
@@ -312,10 +310,10 @@ EOF
 
 
 # Add the module to the project's settings
-echo "include ':feature:$MODULE_NAME'" >> settings.gradle
+echo "include(\":feature:$MODULE_NAME\")" >> settings.gradle.kts
 
 # Add the module to the project's settings
-echo "include ':feature:$INTERFACE_MODULE_SET'" >> settings.gradle
+echo "include(\":feature:$INTERFACE_MODULE_SET\")" >> settings.gradle.kts
 
 # Create .gitignore file
 echo "/build" > feature/$MODULE_NAME/.gitignore
